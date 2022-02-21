@@ -1,0 +1,151 @@
+<!-- //templates/edit.html -->
+{% extends "students/base.html" %}
+ 
+ 
+{% block title %}Add New Employee Records{% endblock title %}
+ 
+{% block content %}
+  <section class="home-section">
+    <div class="home-content">
+      <!-- <i class='bx bx-menu' ></i> -->
+      <!-- <span class="text">Drop Down Sidebar</span> -->
+      <div class="col-md-12">
+    <!-- <h4>Django CRUD (Create Read Update Delete) Example - Bootstrap Datatable</h4>   -->
+ <form method="POST" class="post-form" action="/updatecompany/{{companydetails.id}}">  
+   {% csrf_token %}  
+  <div class="container">  
+ <br>  
+  <div class="form-group row">  
+  <label class="col-sm-1 col-form-label"></label>  
+  <div class="col-sm-4">  
+  <h3>Update Details</h3>  
+  </div>  
+   </div>  
+  <div class="form-group row">  
+  <!-- <label class="col-sm-2 col-form-label">Student Id:</label>   -->
+  <div class="col-sm-4">  
+   <input style="display:none" type="text" class="form-control" name="id" id="id_id" required maxlength="20" value="{{ companydetails.id }}"/>  
+  </div>  
+   </div>
+     <div class="form-group row">  
+  <label  class="col-sm-2 col-form-label">Student Name:</label>  
+  <div class="col-sm-4">  
+   <input  type="text" class="form-control" name="s_fullname" id="id_s_fullname" required maxlength="150" value="{{ companydetails.s_fullname}}" />  
+  </div>  
+   </div>    
+   <div class="form-group row">  
+  <label class="col-sm-2 col-form-label">Phone Number:</label>  
+  <div class="col-sm-4">  
+   <input type="text" class="form-control" name="phone_number " id="id_phone_number " required maxlength="150" value="{{ companydetails.phone_number  }}" />  
+  </div>  
+   </div>  
+  <div class="form-group row">  
+  <label class="col-sm-2 col-form-label">Registration No:</label>  
+  <div class="col-sm-4">  
+   <input type="text" class="form-control" pattern="[A-Za-z0-9-]+$" name="registration_no" id="id_registration_no" required maxlength="150" value="{{ companydetails.registration_no}}" />  
+  </div>  
+   </div>     
+      <div class="form-group row">  
+  <label class="col-sm-2 col-form-label">University Name:</label>  
+  <div class="col-sm-4">  
+   <input type="text" class="form-control" name="university_name" id="id_univeristy_name" required maxlength="15" value="{{ companydetails.university_name}}" />  
+  </div>  
+   </div>  
+  <div class="form-group row">  
+  <label class="col-sm-2 col-form-label">Company Name:</label>  
+  <div class="col-sm-4">  
+   <input type="text" class="form-control" name="company_name" id="id_company_name" required maxlength="150" value="{{ companydetails.company_name }}" />  
+  </div>  
+   </div>   
+   <div class="form-group row">  
+  <label class="col-sm-2 col-form-label">Address:</label>  
+  <div class="col-sm-4">  
+   <input type="text" class="form-control" name="address" id="id_address" required maxlength="150" value="{{ companydetails.address }}" />  
+  </div>  
+   </div>    
+   <div class="form-group row">  
+  <label class="col-sm-2 col-form-label">Company Phone No:</label>  
+  <div class="col-sm-4">  
+   <input type="text" class="form-control" name="company_phone_no" id="id_company_phone_no" required maxlength="150" value="{{ companydetails.company_phone_no }}" />  
+  </div>  
+   </div>
+      <div class="form-group row">  
+  <label class="col-sm-2 col-form-label">Supervisor Name:</label>  
+  <div class="col-sm-4">  
+   <input type="text" class="form-control" name="supervisor_name" id="id_supervisor_name" required maxlength="150" value="{{ companydetails.supervisor_name }}" />  
+  </div>  
+   </div>      
+  <div class="form-group row">  
+  <label class="col-sm-2 col-form-label">County:</label>  
+  <div class="col-sm-4">  
+    <select class="form-control" name="county" id="id_county" value="{{ studentdetails.county }}" required>
+                            <option></option>
+                            <option>Mombasa</option>
+                            <option>Kwale</option>
+                            <option>Kilifi</option>
+                            <option>Tana River</option>
+                            <option>Lamu</option>
+                            <option>Taita/Taveta</option>
+                            <option>Garissa</option>
+                            <option>Wajir</option>
+                            <option>Mandera</option>
+                            <option>Marsabit</option>
+                            <option>Isiolo</option>
+                            <option>Meru</option>
+                            <option>Tharaka-Nithi</option>
+                            <option>Embu</option>
+                            <option>Kitui</option>
+                            <option>Machakos</option>
+                            <option>Makueni</option>
+                            <option>Nyandarua</option>
+                            <option>Nyeri</option>
+                            <option>Kirinyaga</option>
+                            <option>Muranga</option>
+                            <option>Kiambu</option>
+                            <option>Turkana</option>
+                            <option>West Pokot</option>
+                            <option>Samburu</option>
+                            <option>Trans Nzoia</option>    
+                            <option>Usain Gishu</option>   
+                            <option>ELgeyo/Marakwet</option> 
+                            <option>Nandi</option>          
+                            <option>Baringo</option>     
+                            <option>Laikipia</option>      
+                            <option>Nakuru</option>         
+                            <option>Narok</option>      
+                            <option>Kajiado</option>    
+                            <option>Kericho</option>      
+                            <option>Bomet</option> 
+                            <option>Kakamega</option>
+                            <option>Vihiga</option>
+                            <option>Bungoma</option>
+                            <option>Busia</option>
+                            <option>Siaya</option>
+                            <option>Kisumu</option>
+                            <option>Homa Bay</option>
+                            <option>Migori</option>
+                            <option>Kisii</option>
+                            <option>Nyamira</option>
+                            <option>Nairobi City</option>
+                          </select>
+  </div>  
+   </div>  
+   
+  <div class="form-group row">  
+  <label class="col-sm-1 col-form-label"></label>  
+  <div class="col-sm-4">  
+  <button type="submit" class="btn btn-success btn-lg">Update</button>  
+  </div>  
+   </div>  
+  </div>  
+ </form>  
+    </div>
+  </section>
+
+{% endblock content %}   
+
+
+
+
+
+
